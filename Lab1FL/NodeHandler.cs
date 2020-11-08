@@ -40,7 +40,7 @@ namespace Lab1FL
             {
                 if (item == null) throw new ArgumentNullException();
                 object[] parameters = { item.Surname, item.Name, item.Thirdname, 
-                    item.Birthday.ToString($"{item.Birthday.Day}.{item.Birthday.Month}.{item.Birthday.Year}"),
+                    item.Birthday.ToString("d"),
                     item.Phone, item.Country, item.Organization, item.Position, item.Other };
 
                 Console.WriteLine("Поля для изменения:\n1. Фамилия\n2. Имя\n3. Отчество\n4. Дата рождения\n" +
