@@ -37,11 +37,10 @@ namespace Lab1FL
         public void Update(Node item)
         {
             try
-            {
+            {  
                 if (item == null) throw new ArgumentNullException();
-                object[] parameters = { item.Surname, item.Name, item.Thirdname, 
-                    item.Birthday.ToString("d"),
-                    item.Phone, item.Country, item.Organization, item.Position, item.Other };
+                string[] parameters = { item.Surname, item.Name, item.Thirdname, item.Birthday.ToString("d"),
+                    item.Phone.ToString(), item.Country, item.Organization, item.Position, item.Other };
 
                 Console.WriteLine("Поля для изменения:\n1. Фамилия\n2. Имя\n3. Отчество\n4. Дата рождения\n" +
                     "5. Телефон\n6. Страна\n7. Организация\n8. Должность\n9. Другое");
@@ -58,15 +57,15 @@ namespace Lab1FL
                 item = new Node()
                 {
                     ID = item.ID,
-                    Surname = (string)parameters[0],
-                    Name = (string)parameters[1],
-                    Thirdname = (string)parameters[2],
-                    Phone = long.Parse(parameters[4].ToString()),
-                    Country = (string)parameters[5],
-                    Birthday = DateParse((string)parameters[3]),
-                    Organization = (string)parameters[6],
-                    Position = (string)parameters[7],
-                    Other = (string)parameters[8]
+                    Surname = parameters[0],
+                    Name = parameters[1],
+                    Thirdname = parameters[2],
+                    Phone = long.Parse(parameters[4]),
+                    Country = parameters[5],
+                    Birthday = DateParse(parameters[3]),
+                    Organization = parameters[6],
+                    Position = parameters[7],
+                    Other = parameters[8]
                 };
                 nodes[item.ID] = item;
 
