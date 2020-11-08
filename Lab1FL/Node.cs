@@ -17,8 +17,7 @@ namespace Lab1FL
 
         public override string ToString()
         {
-            return $"\nID: {ID}\nФамилия: {Surname}\nИмя: {Name}\nОтчество: {Thirdname}\n" +
-                $"Дата рождения: {Birthday.ToString($"{Birthday.Day}.{Birthday.Month}.{Birthday.Year}")}\n" +
+            return $"\nID: {ID}\nФамилия: {Surname}\nИмя: {Name}\nОтчество: {Thirdname}\nДата рождения: {Birthday.ToString("d")}\n" +
                 $"Телефон: {Phone}\nСтрана: {Country}\nОрганизация: {Organization}\nДолжность: {Position}\nПрочее: {Other}";
         }
     }
